@@ -1,0 +1,26 @@
+server:
+  host: 'localhost'
+  port: 65432
+  max_connections: 5
+  timeout: 5
+
+commands:
+  allowed:
+    - ls
+    - dir
+    - pwd
+    - cd
+    - echo
+    - cat
+    - type
+  blocked:
+    - rm
+    - del
+    - format
+    - sudo
+
+security:
+  max_command_length: 100
+  require_auth: true
+  auth_token: 'your_secure_token_here'
+  log_commands: true
